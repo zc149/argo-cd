@@ -87,7 +87,16 @@ export class AbstractAppsListPreferences {
 
 export class AppsListPreferences extends AbstractAppsListPreferences {
     public static countEnabledFilters(pref: AppsListPreferences) {
-        return [pref.clustersFilter, pref.healthFilter, pref.labelsFilter, pref.annotationsFilter, pref.namespacesFilter, pref.projectsFilter, pref.reposFilter, pref.syncFilter].reduce(
+        return [
+            pref.clustersFilter,
+            pref.healthFilter,
+            pref.labelsFilter,
+            pref.annotationsFilter,
+            pref.namespacesFilter,
+            pref.projectsFilter,
+            pref.reposFilter,
+            pref.syncFilter,
+        ].reduce(
             (count, filter) => {
                 if (filter && filter.length > 0) {
                     return count + 1;
