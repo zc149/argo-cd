@@ -95,16 +95,13 @@ export class AppsListPreferences extends AbstractAppsListPreferences {
             pref.namespacesFilter,
             pref.projectsFilter,
             pref.reposFilter,
-            pref.syncFilter,
-        ].reduce(
-            (count, filter) => {
-                if (filter && filter.length > 0) {
-                    return count + 1;
-                }
-                return count;
-            },
-            0
-        );
+            pref.syncFilter
+        ].reduce((count, filter) => {
+            if (filter && filter.length > 0) {
+                return count + 1;
+            }
+            return count;
+        }, 0);
     }
 
     public static clearFilters(pref: AppsListPreferences) {
